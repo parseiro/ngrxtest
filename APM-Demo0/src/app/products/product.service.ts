@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
-import { Observable, of, BehaviorSubject, throwError } from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
+import {Observable, of, throwError} from 'rxjs';
+import {catchError, map, tap} from 'rxjs/operators';
 
-import { Product } from './product';
+import {Product} from './product';
 
 @Injectable({
   providedIn: 'root',
@@ -34,16 +34,16 @@ export class ProductService {
       );
   }
 
-  // Return an initialized product
-  // newProduct(): Product {
-  //   return {
-  //     id: 0,
-  //     productName: '',
-  //     productCode: 'New',
-  //     description: '',
-  //     starRating: 0
-  //   };
-  // }
+/*  Return an initialized product
+  newProduct(): Product {
+    return {
+      id: 0,
+      productName: '',
+      productCode: 'New',
+      description: '',
+      starRating: 0
+    };
+  }*/
 
   createProduct(product: Product): Observable<Product> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
